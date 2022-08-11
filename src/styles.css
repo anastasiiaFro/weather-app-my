@@ -1,0 +1,93 @@
+body {
+  padding: 30px;
+}
+
+.current {
+  font-family: "Anek Malayalam", sans-serif;
+  font-weight: 200;
+}
+
+.date {
+  font-family: "Anek Malayalam", sans-serif;
+  font-weight: 600;
+}
+.time {
+  font-family: "Anek Malayalam", sans-serif;
+  font-weight: 400;
+  font-size: 34px;
+  text-align: left;
+  padding: 10px 0;
+}
+
+.search {
+  padding-top: 10px;
+  line-height: 1.5;
+}
+
+.location {
+  font-family: "Anek Malayalam", sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 0.6;
+  font-family: "Montserrat", sans-serif;
+  opacity: 0.85;
+}
+
+.search-location {
+  padding: 5px;
+}
+
+.temperatureNum {
+  color: orange;
+  font-family: "Anek Malayalam", sans-serif;
+  font-weight: 400;
+  font-size: 80px;
+}
+
+.unit {
+  position: relative;
+  bottom: 40px;
+  text-decoration: none;
+}
+
+.weather-now {
+  padding: 15px;
+}
+
+.weather-now-text {
+  font-size: 40px;
+  font-weight: 600;
+  opacity: 0.8;
+  font-family: "Raleway", sans-serif;
+  color: orange;
+  letter-spacing: 4px;
+  padding-top: 20px;
+}
+
+.humidity-wind {
+  position: relative;
+  top: 30px;
+}
+.weather-card {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  line-height: 3;
+}
+
+.card-temperature {
+  font-size: 28px;
+  font-family: "Anek Malayalam", sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+.emoji {
+  font-size: 24px;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.motto {
+  font-family: "Smooch", cursive;
+  text-align: center;
+}

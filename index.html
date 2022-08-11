@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather app</title>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/4ff5413f4e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@100;200;600;800&family=Fascinate&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Smooch&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container"></div>
+    <div class="row">
+      <div class="col-6 current">
+        Today is <span class="currentDate"> Saturday 25 June 2022</span>
+        <br />
+        <div class="currentTime">20:14</div>
+      </div>
+    <div id="inputSearch"></div>
+      <div class="search-location">
+        <div class="row search" id="search-form">
+          <div class="col-6">
+            <form>
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Search your location" autocolmplete="off" autofocus="on" id="search-text"/>
+            <input type="submit" class="searchButton" value="Search">
+            <input type="button" class="currentButton" value="Current">
+            </form>
+          </div>
+          <div class="col-6 location">City</div>
+        </div>
+      </div>
+
+      <div class="row weather-now">
+        <div class="col-4 weather-now-text">Description</div>
+        
+        <div class="col-4 humidity-wind">
+          <div class="humidity">Humidity: <span class="humidityData"></span></div>
+          <div class="wind">Wind: <span class="windData"></span></div>
+        </div>
+
+        <div class="col-4 temperature">
+          <span class="temperatureNum">
+          <i class="fa-solid fa-cloud-sun"></i> <span id="numberTemp">T</span></span>
+          <span class="unit">
+            <a href="#" id="cels">°C</a> 
+          </span>
+          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Sunday</h5>
+              <p class="card-text weather-card">Rainy, cloudly</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item card-temperature">18°C</li>
+              <li class="list-group-item emoji">
+                <i class="fa-solid fa-cloud-rain"></i></i>
+              </li>
+              <li class="list-group-item motto">Stay cool and don't forget your umbrella</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Monday</h5>
+              <p class="card-text weather-card">Sunny, windy</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item card-temperature">21°C</li>
+              <li class="list-group-item emoji">
+                <i class="fa-solid fa-cloud-sun"></i>
+              </li>
+              <li class="list-group-item motto">Find a time for a coffe with a friend</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Tuesday</h5>
+              <p class="card-text weather-card">Rainy, windy</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item card-temperature">19°C</li>
+              <li class="list-group-item emoji"><i class="fa-solid fa-cloud-showers-water"></i></li>
+              <li class="list-group-item motto">Outdoor activities may be delayed</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Wednesday</h5>
+              <p class="card-text weather-card">Sunny, warm</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item card-temperature">17°C</li>
+              <li class="list-group-item emoji"><i class="fa-solid fa-sun"></i></li>
+              <li class="list-group-item motto">Go to the beach today!</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Thursday</h5>
+              <p class="card-text weather-card">Hot, nice</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item card-temperature">23°C</li>
+              <li class="list-group-item emoji"><i class="fa-solid fa-sun"></i></li>
+              <li class="list-group-item motto">Oh, have yourself a fresh cocktail!</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Friday</h5>
+              <p class="card-text weather-card">Sunny</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item card-temperature">25°C</li>
+              <li class="list-group-item emoji"><i class="fa-solid fa-sun"></i></li>
+              <li class="list-group-item motto">Relax, you're awesome )
+                </i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+    <a href="https://github.com/anastasiiaFro/weather-app-project" target="_blank">Open-source</a>
+     by Anastasiia Yaloveha
+
+  </body>
+</html>
